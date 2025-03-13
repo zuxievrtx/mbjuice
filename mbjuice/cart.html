@@ -13,7 +13,7 @@
       href="../assets/images/logo/favicon.png"
       type="image/x-icon"
     />
-    <title>zomo App</title>
+    <title>MB Juice</title>
     <link rel="apple-touch-icon" href="../assets/images/logo/favicon.png" />
     <meta name="theme-color" content="#ff8d2f" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -189,7 +189,7 @@
           <a href="product_details.html">
             <i class="ri-arrow-left-s-line"></i>
           </a>
-          <h2>Starbucks</h2>
+          <h2>MB Juice</h2>
         </div>
       </div>
     </header>
@@ -227,7 +227,7 @@
           </div>
           <div class="sub-total pb-3 mt-3">
             <h5>Biaya Layanan</h5>
-            <h5 class="fw-semibold" id="service-fee">Rp2.000</h5>
+            <h5 class="fw-semibold" id="service-fee">Rp500</h5>
           </div>
           <div class="grand-total">
             <h5 class="fw-semibold">Total</h5>
@@ -253,9 +253,9 @@
             <i class="ri-store-2-line"></i>
           </div>
           <div class="store-details">
-            <h5>Starbucks Mall Central Park</h5>
-            <p>Lantai G, Unit #11</p>
-            <p><i class="ri-time-line"></i> Buka 10:00 - 22:00</p>
+            <h5>Outlet MB Juice 1</h5>
+            <p>Jalan cokroyudan No. 37, Desa Bandasari RT 03 RW 01</p>
+            <p><i class="ri-time-line"></i> Buka 10:00 - 21:00</p>
           </div>
         </div>
 
@@ -335,8 +335,8 @@
           </div>
           <hr />
           <p class="mb-1">
-            Pesanan Anda akan dipersiapkan dan siap untuk diambil di Starbucks
-            Mall Central Park, Lantai G, Unit #11.
+            Pesanan Anda akan dipersiapkan dan siap untuk diambil di Outlet MB
+            Juice 1
           </p>
           <p class="mb-0">
             Anda akan dihubungi melalui WhatsApp ketika pesanan sudah siap
@@ -493,7 +493,7 @@
 
         // Hitung dan perbarui tagihan
         function updateBill() {
-          const serviceFee = 2000; // Biaya layanan tetap
+          const serviceFee = 500; // Biaya layanan tetap
 
           if (cart.length === 0) {
             document.getElementById("subtotal").textContent = "Rp0";
@@ -599,14 +599,14 @@
             (sum, item) => sum + item.price * item.quantity,
             0
           );
-          const serviceFee = 2000;
+          const serviceFee = 500;
           const grandTotal = subtotal + serviceFee;
 
           // Buat pesan
           let message = `*Pesanan Pickup Baru*\n\n`;
           message += `*Nama:* ${customerName}\n`;
           message += `*Telepon:* ${customerPhone}\n\n`;
-          message += `*Lokasi Pickup:* Starbucks Mall Central Park, Lantai G, Unit #11\n`;
+          message += `*Lokasi Pickup:* Outlet MB Juice, Jalan Cokroyudan No 37\n`;
           message += `*Waktu Pengambilan:* ${
             selectedPickupTime === "asap"
               ? "Secepatnya (~20 menit)"

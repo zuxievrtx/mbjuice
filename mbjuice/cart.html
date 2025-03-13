@@ -1,0 +1,685 @@
+<html lang="id" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="zomo" />
+    <meta name="keywords" content="zomo" />
+    <meta name="author" content="zomo" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link
+      rel="icon"
+      href="../assets/images/logo/favicon.png"
+      type="image/x-icon"
+    />
+    <title>zomo App</title>
+    <link rel="apple-touch-icon" href="../assets/images/logo/favicon.png" />
+    <meta name="theme-color" content="#ff8d2f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="zomo" />
+    <meta
+      name="msapplication-TileImage"
+      content="../assets/images/logo/favicon.png"
+    />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- font link -->
+    <link rel="stylesheet" href="../assets/css/vendors/metropolis.min.css" />
+
+    <!-- remixicon css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- bootstrap css -->
+    <link
+      rel="stylesheet"
+      id="rtl-link"
+      type="text/css"
+      href="../assets/css/vendors/bootstrap.min.css"
+    />
+
+    <!-- Theme css -->
+    <link
+      rel="stylesheet"
+      id="change-link"
+      type="text/css"
+      href="../assets/css/style.css"
+    />
+
+    <style>
+      .order-form {
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      .form-label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      .form-control {
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+      }
+      .section-heading {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+      .pickup-time-selector {
+        margin-top: 15px;
+      }
+      .time-slots {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .time-slot {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        cursor: pointer;
+        flex-grow: 1;
+        text-align: center;
+        transition: all 0.2s ease;
+      }
+      .time-slot.active {
+        background-color: #ff8d2f;
+        color: white;
+        border-color: #ff8d2f;
+      }
+      .pickup-store {
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .store-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        font-size: 24px;
+        color: #ff8d2f;
+      }
+      .store-details h5 {
+        margin-bottom: 5px;
+      }
+      .store-details p {
+        margin-bottom: 0;
+        color: #666;
+        font-size: 14px;
+      }
+      .special-instructions {
+        margin-top: 20px;
+      }
+      .order-summary {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-top: 20px;
+      }
+      .order-summary h4 {
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .order-time {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .order-time i {
+        color: #ff8d2f;
+        margin-right: 10px;
+      }
+      .pickup-badge {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      .method-toggle {
+        display: flex;
+        border: 1px solid #ddd;
+        border-radius: 50px;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      .method-toggle button {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .method-toggle button.active {
+        background-color: #ff8d2f;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- header start -->
+    <header class="section-t-space">
+      <div class="custom-container">
+        <div class="header-panel">
+          <a href="product_details.html">
+            <i class="ri-arrow-left-s-line"></i>
+          </a>
+          <h2>Starbucks</h2>
+        </div>
+      </div>
+    </header>
+    <!-- header end -->
+
+    <!-- Add Cart section start -->
+    <section data-protonpass-form="">
+      <div class="custom-container">
+        <h3 class="fw-semibold dark-text">Pesanan Anda</h3>
+        <div id="cart-items-container">
+          <!-- Cart items will be populated here -->
+          <div class="text-center py-4" id="empty-cart-message">
+            <i
+              class="ri-shopping-cart-line"
+              style="font-size: 3rem; color: #ccc"
+            ></i>
+            <p class="mt-3">Keranjang Anda masih kosong</p>
+            <a href="product_details.html" class="btn btn-outline mt-2"
+              >Tambah Makanan</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Add Cart section end -->
+
+    <!-- Bill details section start -->
+    <section class="bill-details">
+      <div class="custom-container">
+        <h3 class="fw-semibold dark-text">Detail Tagihan</h3>
+        <div class="total-detail mt-3">
+          <div class="sub-total">
+            <h5>Subtotal</h5>
+            <h5 class="fw-semibold" id="subtotal">Rp0</h5>
+          </div>
+          <div class="sub-total pb-3 mt-3">
+            <h5>Biaya Layanan</h5>
+            <h5 class="fw-semibold" id="service-fee">Rp2.000</h5>
+          </div>
+          <div class="grand-total">
+            <h5 class="fw-semibold">Total</h5>
+            <h5 class="fw-semibold amount" id="grand-total">Rp0</h5>
+          </div>
+          <img
+            class="dots-design"
+            src="../assets/images/svg/dots-design.svg"
+            alt="dots"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- Bill details section end -->
+
+    <!-- Pickup Information section start -->
+    <section class="delivery address">
+      <div class="custom-container">
+        <h3 class="section-heading">Informasi Pengambilan</h3>
+
+        <div class="pickup-store">
+          <div class="store-icon">
+            <i class="ri-store-2-line"></i>
+          </div>
+          <div class="store-details">
+            <h5>Starbucks Mall Central Park</h5>
+            <p>Lantai G, Unit #11</p>
+            <p><i class="ri-time-line"></i> Buka 10:00 - 22:00</p>
+          </div>
+        </div>
+
+        <div class="pickup-time-selector mt-4">
+          <h5 class="fw-semibold">Pilih Waktu Pengambilan</h5>
+          <div class="time-slots">
+            <div class="time-slot" data-time="asap">
+              Secepatnya<br />(~20 min)
+            </div>
+            <div class="time-slot" data-time="11:00">11:00</div>
+            <div class="time-slot" data-time="11:30">11:30</div>
+            <div class="time-slot" data-time="12:00">12:00</div>
+          </div>
+          <div class="time-slots mt-2">
+            <div class="time-slot" data-time="12:30">12:30</div>
+            <div class="time-slot" data-time="13:00">13:00</div>
+            <div class="time-slot" data-time="13:30">13:30</div>
+            <div class="time-slot" data-time="14:00">14:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pickup Information section end -->
+
+    <!-- Order Form section start -->
+    <section class="delivery address">
+      <div class="custom-container">
+        <h3 class="section-heading">Informasi Pemesan</h3>
+        <div class="order-form">
+          <div class="mb-3">
+            <label for="customerName" class="form-label">Nama Lengkap</label>
+            <input
+              type="text"
+              class="form-control"
+              id="customerName"
+              placeholder="Masukkan nama lengkap"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="customerPhone" class="form-label">Nomor Telepon</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="customerPhone"
+              placeholder="Masukkan nomor telepon"
+            />
+          </div>
+          <div class="special-instructions">
+            <label for="orderNotes" class="form-label">Catatan Khusus</label>
+            <textarea
+              class="form-control"
+              id="orderNotes"
+              rows="2"
+              placeholder="Catatan khusus untuk pesanan Anda"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Order Form section end -->
+
+    <!-- Order Summary section start -->
+    <section class="delivery address section-lg-b-space">
+      <div class="custom-container">
+        <div class="order-summary">
+          <h4>Ringkasan Pesanan</h4>
+          <div class="order-time">
+            <i class="ri-time-line"></i>
+            <div>
+              <p class="mb-0">
+                Estimasi pesanan siap: <strong id="pickup-time">-</strong>
+              </p>
+              <span class="pickup-badge"
+                ><i class="ri-takeaway-line"></i> Self Pickup</span
+              >
+            </div>
+          </div>
+          <hr />
+          <p class="mb-1">
+            Pesanan Anda akan dipersiapkan dan siap untuk diambil di Starbucks
+            Mall Central Park, Lantai G, Unit #11.
+          </p>
+          <p class="mb-0">
+            Anda akan dihubungi melalui WhatsApp ketika pesanan sudah siap
+            diambil.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Order Summary section end -->
+
+    <!-- pay popup start -->
+    <div class="pay-popup">
+      <div class="price-items">
+        <h3 id="popup-total">Rp0</h3>
+        <h6 id="popup-items">0 item</h6>
+      </div>
+      <a href="#" class="btn theme-btn pay-btn mt-0" id="order-button" disabled>
+        Pesan Sekarang
+      </a>
+    </div>
+    <!-- pay popup end -->
+
+    <!-- bootstrap js -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- script js -->
+    <script src="../assets/js/script.js"></script>
+
+    <!-- Custom Cart and Order JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Inisialisasi variabel
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let selectedPickupTime = null;
+
+        // Render item keranjang
+        function renderCartItems() {
+          const container = document.getElementById("cart-items-container");
+          const emptyMessage = document.getElementById("empty-cart-message");
+
+          // Bersihkan container
+          // (Kecuali pesan kosong, yang akan kita tampilkan/sembunyikan nanti)
+          Array.from(container.children).forEach((child) => {
+            if (child.id !== "empty-cart-message") {
+              child.remove();
+            }
+          });
+
+          if (cart.length === 0) {
+            // Tampilkan pesan keranjang kosong
+            emptyMessage.style.display = "block";
+            return;
+          }
+
+          // Sembunyikan pesan keranjang kosong
+          emptyMessage.style.display = "none";
+
+          // Render setiap item
+          cart.forEach((item, index) => {
+            const itemElement = document.createElement("div");
+            itemElement.className = "horizontal-product-box mt-3";
+            itemElement.innerHTML = `
+              <div class="product-img">
+                <img class="img-fluid img" src="${item.img}" alt="${item.name}">
+              </div>
+              <div class="product-content">
+                <h5>${item.name}</h5>
+                <h6>${
+                  item.type === "nonveg" ? "Non-Vegetarian" : "Vegetarian"
+                }</h6>
+                <div class="plus-minus" data-index="${index}">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="${
+                    item.quantity
+                  }" min="1" max="10">
+                  <i class="ri-add-line add"></i>
+                </div>
+                ${
+                  item.type === "nonveg"
+                    ? `<img class="red-symbol" src="../assets/images/svg/nonveg.svg" alt="non-veg">`
+                    : `<img class="red-symbol" src="../assets/images/icons/veg.svg" alt="veg">`
+                }
+                <h3 class="product-price">Rp${numberWithCommas(item.price)}</h3>
+              </div>
+            `;
+
+            container.appendChild(itemElement);
+          });
+
+          // Tambahkan event listener untuk plus/minus
+          addPlusMinusListeners();
+
+          // Hitung dan perbarui tagihan
+          updateBill();
+        }
+
+        // Tambahkan event listener untuk tombol plus/minus
+        function addPlusMinusListeners() {
+          const plusMinusContainers = document.querySelectorAll(".plus-minus");
+
+          plusMinusContainers.forEach((container) => {
+            const index = container.dataset.index;
+            const minusButton = container.querySelector(".sub");
+            const plusButton = container.querySelector(".add");
+            const quantityInput = container.querySelector("input");
+
+            // Tombol kurang
+            minusButton.addEventListener("click", function () {
+              if (cart[index].quantity > 1) {
+                cart[index].quantity--;
+                quantityInput.value = cart[index].quantity;
+                updateBill();
+
+                // Simpan keranjang
+                saveCart();
+              } else {
+                // Hapus item jika quantity 0
+                cart.splice(index, 1);
+                renderCartItems();
+
+                // Simpan keranjang
+                saveCart();
+              }
+            });
+
+            // Tombol tambah
+            plusButton.addEventListener("click", function () {
+              cart[index].quantity++;
+              quantityInput.value = cart[index].quantity;
+              updateBill();
+
+              // Simpan keranjang
+              saveCart();
+            });
+
+            // Input quantity
+            quantityInput.addEventListener("change", function () {
+              const newQuantity = parseInt(this.value);
+
+              if (newQuantity <= 0) {
+                // Hapus item jika quantity 0
+                cart.splice(index, 1);
+                renderCartItems();
+              } else {
+                cart[index].quantity = newQuantity;
+                updateBill();
+              }
+
+              // Simpan keranjang
+              saveCart();
+            });
+          });
+        }
+
+        // Hitung dan perbarui tagihan
+        function updateBill() {
+          const serviceFee = 2000; // Biaya layanan tetap
+
+          if (cart.length === 0) {
+            document.getElementById("subtotal").textContent = "Rp0";
+            document.getElementById("service-fee").textContent = "Rp0";
+            document.getElementById("grand-total").textContent = "Rp0";
+            document.getElementById("popup-total").textContent = "Rp0";
+            document.getElementById("popup-items").textContent = "0 item";
+            return;
+          }
+
+          // Hitung subtotal
+          const subtotal = cart.reduce(
+            (sum, item) => sum + item.price * item.quantity,
+            0
+          );
+
+          // Hitung total
+          const grandTotal = subtotal + serviceFee;
+
+          // Update tampilan
+          document.getElementById(
+            "subtotal"
+          ).textContent = `Rp${numberWithCommas(subtotal)}`;
+          document.getElementById(
+            "service-fee"
+          ).textContent = `Rp${numberWithCommas(serviceFee)}`;
+          document.getElementById(
+            "grand-total"
+          ).textContent = `Rp${numberWithCommas(grandTotal)}`;
+
+          // Update popup
+          document.getElementById(
+            "popup-total"
+          ).textContent = `Rp${numberWithCommas(grandTotal)}`;
+
+          // Hitung total item
+          const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+          document.getElementById(
+            "popup-items"
+          ).textContent = `${totalItems} item`;
+
+          // Update status tombol pesan
+          updateOrderButtonStatus();
+        }
+
+        // Format angka dengan titik sebagai pemisah ribuan
+        function numberWithCommas(x) {
+          return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        // Simpan keranjang ke localStorage
+        function saveCart() {
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        // Update status tombol pesan
+        function updateOrderButtonStatus() {
+          const orderButton = document.getElementById("order-button");
+          const customerName = document.getElementById("customerName").value;
+          const customerPhone = document.getElementById("customerPhone").value;
+
+          // Cek semua kondisi
+          const isCartEmpty = cart.length === 0;
+          const isNameEmpty = !customerName.trim();
+          const isPhoneEmpty = !customerPhone.trim();
+          const isPickupTimeSelected = selectedPickupTime !== null;
+
+          // Enable tombol hanya jika semua kondisi terpenuhi
+          if (
+            !isCartEmpty &&
+            !isNameEmpty &&
+            !isPhoneEmpty &&
+            isPickupTimeSelected
+          ) {
+            orderButton.removeAttribute("disabled");
+            orderButton.classList.remove("disabled");
+          } else {
+            orderButton.setAttribute("disabled", "disabled");
+            orderButton.classList.add("disabled");
+          }
+        }
+
+        // Set waktu pengambilan
+        function setPickupTime(time) {
+          selectedPickupTime = time;
+
+          // Update tampilan
+          document.getElementById("pickup-time").textContent =
+            time === "asap" ? "Secepatnya (~20 menit)" : time;
+
+          // Update status tombol pesan
+          updateOrderButtonStatus();
+        }
+
+        // Fungsi untuk mengirim pesanan ke WhatsApp
+        function sendOrder() {
+          const customerName = document.getElementById("customerName").value;
+          const customerPhone = document.getElementById("customerPhone").value;
+          const orderNotes = document.getElementById("orderNotes").value;
+
+          // Hitung subtotal dan total
+          const subtotal = cart.reduce(
+            (sum, item) => sum + item.price * item.quantity,
+            0
+          );
+          const serviceFee = 2000;
+          const grandTotal = subtotal + serviceFee;
+
+          // Buat pesan
+          let message = `*Pesanan Pickup Baru*\n\n`;
+          message += `*Nama:* ${customerName}\n`;
+          message += `*Telepon:* ${customerPhone}\n\n`;
+          message += `*Lokasi Pickup:* Starbucks Mall Central Park, Lantai G, Unit #11\n`;
+          message += `*Waktu Pengambilan:* ${
+            selectedPickupTime === "asap"
+              ? "Secepatnya (~20 menit)"
+              : selectedPickupTime
+          }\n`;
+
+          if (orderNotes) {
+            message += `*Catatan:* ${orderNotes}\n`;
+          }
+
+          message += `\n*Detail Pesanan:*\n`;
+
+          // Tambahkan item pesanan
+          cart.forEach((item) => {
+            message += `- ${item.name} x${item.quantity} - Rp${numberWithCommas(
+              item.price * item.quantity
+            )}\n`;
+          });
+
+          message += `\n*Subtotal:* Rp${numberWithCommas(subtotal)}`;
+          message += `\n*Biaya Layanan:* Rp${numberWithCommas(serviceFee)}`;
+          message += `\n*Total:* Rp${numberWithCommas(grandTotal)}`;
+
+          // Encode pesan untuk URL
+          const encodedMessage = encodeURIComponent(message);
+
+          // Buat URL WhatsApp
+          const whatsappURL = `https://api.whatsapp.com/send/?phone=6285768973182&text=${encodedMessage}&type=phone_number&app_absent=0`;
+
+          // Buka URL WhatsApp
+          window.location.href = whatsappURL;
+
+          // Kosongkan keranjang setelah pesan dikirim
+          cart = [];
+          saveCart();
+        }
+
+        // Event listeners untuk form input
+        document
+          .getElementById("customerName")
+          .addEventListener("input", updateOrderButtonStatus);
+        document
+          .getElementById("customerPhone")
+          .addEventListener("input", updateOrderButtonStatus);
+
+        // Event listener untuk slot waktu
+        const timeSlots = document.querySelectorAll(".time-slot");
+
+        timeSlots.forEach((slot) => {
+          slot.addEventListener("click", function () {
+            // Hapus class active dari semua slot
+            timeSlots.forEach((s) => s.classList.remove("active"));
+
+            // Tambah class active ke slot yang diklik
+            this.classList.add("active");
+
+            // Set waktu pengambilan
+            setPickupTime(this.dataset.time);
+          });
+        });
+
+        // Event listener untuk tombol pesan
+        document
+          .getElementById("order-button")
+          .addEventListener("click", function (e) {
+            e.preventDefault();
+            sendOrder();
+          });
+
+        // Inisialisasi
+        renderCartItems();
+        updateOrderButtonStatus();
+      });
+    </script>
+  </body>
+</html>

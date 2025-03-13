@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="zomo" />
+    <meta name="keywords" content="zomo" />
+    <meta name="author" content="zomo" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link
+      rel="icon"
+      href="../assets/images/logo/favicon.png"
+      type="image/x-icon"
+    />
+    <title>zomo App - Ramadhan Special</title>
+    <link rel="apple-touch-icon" href="../assets/images/logo/favicon.png" />
+    <meta name="theme-color" content="#0D8A53" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="zomo" />
+    <meta
+      name="msapplication-TileImage"
+      content="../assets/images/logo/favicon.png"
+    />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- font link -->
+    <link rel="stylesheet" href="../assets/css/vendors/metropolis.min.css" />
+
+    <!-- remixicon css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- swiper css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/css/vendors/swiper-bundle.min.css"
+    />
+
+    <!-- bootstrap css -->
+    <link
+      rel="stylesheet"
+      id="rtl-link"
+      type="text/css"
+      href="../assets/css/vendors/bootstrap.min.css"
+    />
+
+    <!-- Theme css -->
+    <link
+      rel="stylesheet"
+      id="change-link"
+      type="text/css"
+      href="../assets/css/style.css"
+    />
+
+    <!-- Ramadhan Theme CSS -->
+    <style>
+      :root {
+        --theme-color: #0d8a53;
+        --theme-color-light: #e8f5ee;
+        --theme-color-dark: #086940;
+        --ramadhan-gold: #f5d547;
+        --ramadhan-light-green: #8cc484;
+      }
+
+      body {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%230D8A53' fill-opacity='0.05'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") !important;
+      }
+
+      /* Ramadhan Header Banner */
+      .ramadhan-banner {
+        background: linear-gradient(
+          135deg,
+          var(--theme-color) 0%,
+          var(--theme-color-dark) 100%
+        );
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        box-shadow: 0 4px 10px rgba(13, 138, 83, 0.2);
+      }
+
+      .ramadhan-banner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='80' height='80' fill='%23F5D547' opacity='0.2'%3E%3Cpath d='M12 3L14.1 9.4H21L15.5 13.5L17.6 20L12 15.9L6.4 20L8.5 13.5L3 9.4H9.9L12 3Z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        opacity: 0.5;
+      }
+
+      .ramadhan-banner h4 {
+        margin: 0;
+        font-size: 18px;
+        color: white;
+      }
+
+      .ramadhan-banner p {
+        margin: 5px 0 0;
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      /* Crescrent moon icon */
+      .moon-icon {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        color: var(--ramadhan-gold);
+      }
+
+      /* Ramadhan header styling */
+      .header-panel {
+        background-color: white;
+        border-bottom: 2px solid var(--theme-color-light);
+      }
+
+      .header-panel-lg {
+        background-color: white;
+        border-bottom: 2px solid var(--theme-color-light);
+      }
+
+      /* Themed category tabs */
+      .food-category-tabs {
+        background-color: white;
+        padding: 5px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .category-tab {
+        background-color: white;
+        color: #555;
+        border-radius: 8px;
+        padding: 8px 15px;
+        margin: 0 3px;
+        transition: all 0.3s ease;
+      }
+
+      .category-tab.active {
+        background-color: var(--theme-color);
+        color: white;
+      }
+
+      /* Iftar special badge */
+      .iftar-badge {
+        background-color: var(--theme-color);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        z-index: 2;
+      }
+
+      .bestseller-badge {
+        background-color: var(--ramadhan-gold) !important;
+        color: #333 !important;
+      }
+
+      /* Product box styling */
+      .product-box2 {
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        position: relative;
+        background-color: white;
+        border: 1px solid #f0f0f0;
+      }
+
+      .product-box2:hover {
+        box-shadow: 0 5px 15px rgba(13, 138, 83, 0.1);
+      }
+
+      .product-box2 .add-btn .btn-outline {
+        border-color: var(--theme-color);
+        color: var(--theme-color);
+      }
+
+      .product-box2 .add-btn .btn-outline:hover {
+        background-color: var(--theme-color);
+        color: white;
+      }
+
+      /* Ramadhan Special Card */
+      .ramadhan-specials {
+        margin-bottom: 20px;
+      }
+
+      .ramadhan-special-title {
+        color: var(--theme-color);
+        margin-bottom: 10px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+      }
+
+      .ramadhan-special-title i {
+        margin-right: 5px;
+      }
+
+      .special-card {
+        background: linear-gradient(
+          135deg,
+          var(--theme-color-light) 0%,
+          #ffffff 100%
+        );
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .special-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='80' height='80' fill='%230D8A53' opacity='0.05'%3E%3Cpath d='M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3ZM12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5ZM13 10.585L15.1716 12.7574L13.7574 14.1716L11 11.4142V7H13V10.585Z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        transform: rotate(-15deg);
+      }
+
+      .special-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+        margin-right: 15px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .special-image i {
+        font-size: 30px;
+        color: var(--theme-color);
+      }
+
+      .special-content h5 {
+        margin: 0 0 5px;
+        color: var(--theme-color-dark);
+      }
+
+      .special-content p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .special-time {
+        font-size: 13px;
+        color: #777;
+        margin-top: 5px;
+      }
+
+      .special-time i {
+        color: var(--theme-color);
+        margin-right: 5px;
+      }
+
+      /* Ramadhan countdown timer */
+      .ramadhan-timer {
+        background-color: white;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .ramadhan-timer h5 {
+        color: var(--theme-color);
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .countdown-item {
+        background-color: var(--theme-color);
+        color: white;
+        border-radius: 8px;
+        padding: 8px 5px;
+        min-width: 50px;
+        text-align: center;
+      }
+
+      .countdown-item span {
+        display: block;
+      }
+
+      .countdown-item .number {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .countdown-item .label {
+        font-size: 12px;
+        opacity: 0.8;
+      }
+
+      /* Cart popup */
+      .cart-popup {
+        background-color: var(--theme-color);
+      }
+
+      .theme-btn {
+        background-color: var(--theme-color-dark);
+        border-color: var(--theme-color-dark);
+      }
+
+      .theme-btn:hover {
+        background-color: var(--theme-color);
+        border-color: var(--theme-color);
+      }
+
+      /* Restaurant details styling */
+      .restaurant-details-box {
+        background-color: white;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .estimated-time {
+        color: var(--theme-color);
+      }
+
+      /* Lantern decorations */
+      .lantern-decoration {
+        position: absolute;
+        width: 30px;
+        height: 40px;
+        background-color: var(--ramadhan-gold);
+        border-radius: 15px 15px 5px 5px;
+        top: 10px;
+        z-index: 10;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .lantern-left {
+        left: 20px;
+      }
+
+      .lantern-right {
+        right: 20px;
+      }
+
+      .lantern-decoration:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        background-color: #0d8a53;
+        border-radius: 50%;
+      }
+
+      .lantern-decoration:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 5px;
+        background-color: var(--ramadhan-gold);
+        border-radius: 0 0 10px 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- header start -->
+    <header>
+      <div class="header-panel-lg">
+        <div class="custom-container">
+          <div class="panel">
+            <a href="food-home.html"><i class="ri-arrow-left-s-line"></i></a>
+            <a href="#" id="toggle-search"><i class="ri-search-2-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header end -->
+
+    <!-- Lantern decorations -->
+    <div class="lantern-decoration lantern-left"></div>
+    <div class="lantern-decoration lantern-right"></div>
+
+    <!-- Ramadhan Banner -->
+    <section class="mt-3">
+      <div class="custom-container">
+        <div class="ramadhan-banner">
+          <i class="ri-moon-fill moon-icon"></i>
+          <h4>Selamat Menunaikan Ibadah Puasa</h4>
+          <p>Nikmati menu spesial berbuka puasa kami</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ramadhan Specials -->
+    <section class="ramadhan-specials">
+      <div class="custom-container">
+        <h4 class="ramadhan-special-title">
+          <i class="ri-award-fill"></i> Menu Spesial Ramadhan
+        </h4>
+
+        <div class="special-card">
+          <div class="special-image">
+            <i class="ri-goblet-fill"></i>
+          </div>
+          <div class="special-content">
+            <h5>Paket Takjil</h5>
+            <p>Kurma, kolak pisang, dan es buah segar</p>
+            <p class="special-time">
+              <i class="ri-time-line"></i> Siap 5 menit sebelum berbuka
+            </p>
+          </div>
+        </div>
+
+        <div class="special-card">
+          <div class="special-image">
+            <i class="ri-restaurant-fill"></i>
+          </div>
+          <div class="special-content">
+            <h5>Paket Berbuka Keluarga</h5>
+            <p>Menu lengkap untuk 4 orang</p>
+            <p class="special-time">
+              <i class="ri-time-line"></i> Pesan min. 1 jam sebelum berbuka
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurant details section start -->
+    <section>
+      <div class="custom-container">
+        <div class="restaurant-details-box">
+          <div class="restaurant-head">
+            <div class="name">
+              <img
+                class="img-fluid restaurant-logo"
+                src="../assets/images/icons/logo.jpg"
+                alt="starbucks-logo"
+              />
+              <div class="d-block ms-2">
+                <h3>MB Juice</h3>
+                <h6>Minuman & Makanan Ringan</h6>
+              </div>
+            </div>
+            <div class="option">
+              <a href="#">
+                <i class="ri-share-line share"></i>
+              </a>
+
+              <a href="#">
+                <i class="toggle-heart ri-heart-3-fill heart"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="restaurant-details">
+            <div class="location">
+              <h6 class="rating-star">
+                <span class="star"><i class="ri-star-s-fill"></i></span> 4.8
+                (500+ Ulasan)
+              </h6>
+              <h6 class="pt-2 light-text">
+                <span class="dark-text">5-10</span> menit persiapan
+              </h6>
+            </div>
+            <ul class="distance">
+              <li><i class="ri-map-pin-fill theme-color"></i> 10:00 | Buka</li>
+              <li><i class="ri-time-fill theme-color"></i> 20:30 | Tutup</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Restaurant details section end -->
+
+    <!-- Search Box -->
+    <div class="custom-container" id="search-container" style="display: none">
+      <div class="search-box">
+        <i class="ri-search-line search-icon"></i>
+        <input
+          type="text"
+          class="search-input"
+          id="search-input"
+          placeholder="Cari menu favorit Anda..."
+        />
+      </div>
+    </div>
+
+    <!-- Pickup Info section start -->
+    <section>
+      <div class="custom-container">
+        <div
+          class="alert alert-info d-flex align-items-center"
+          role="alert"
+          style="
+            background-color: var(--theme-color-light);
+            color: var(--theme-color-dark);
+            border-color: var(--theme-color);
+          "
+        >
+          <i class="ri-information-line me-2"></i>
+          <div>
+            Pesanan Anda akan dipersiapkan untuk diambil di outlet MB Juice
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pickup Info section end -->
+
+    <!-- Category Tabs section start -->
+    <section class="sticky-categories">
+      <div class="custom-container">
+        <div class="food-category-tabs" id="category-tabs">
+          <div class="category-tab active" data-category="all">Semua Menu</div>
+          <div class="category-tab" data-category="bestseller">Terlaris</div>
+          <div class="category-tab" data-category="iftar">Menu Berbuka</div>
+          <div class="category-tab" data-category="nonveg">Non-Vegetarian</div>
+          <div class="category-tab" data-category="veg">Vegetarian</div>
+          <div class="category-tab" data-category="coffee">Kopi</div>
+          <div class="category-tab" data-category="dessert">Dessert</div>
+        </div>
+      </div>
+    </section>
+    <!-- Category Tabs section end -->
+
+    <!-- food section start -->
+    <section class="food-list-section section-b-space">
+      <div class="custom-container">
+        <div class="list-box">
+          <div id="food-items-container">
+            <!-- Food items will be populated here based on category selection -->
+            <!-- Example Product 1 -->
+            <div
+              class="product-box2 mt-4"
+              data-id="1"
+              data-name="Mexican Shred Beef"
+              data-price="85000"
+              data-img="../assets/images/product/rp1.png"
+              data-type="nonveg"
+              data-category="bestseller,nonveg,iftar"
+            >
+              <span class="product-badge bestseller-badge">Terlaris</span>
+              <span class="iftar-badge">Menu Berbuka</span>
+              <div class="product-content">
+                <img
+                  class="img"
+                  src="../assets/images/svg/nonveg.svg"
+                  alt="non-veg"
+                />
+                <h5 class="product-name">Mexican Shred Beef</h5>
+                <div class="d-flex align-items-center gap-1">
+                  <ul class="rating-stars">
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                  </ul>
+                  <h5 class="dark-text">1k+ Rating</h5>
+                </div>
+                <div class="product-price">
+                  <h6 class="fw-semibold">Rp85.000</h6>
+                </div>
+                <p class="mb-0 mt-2 pt-2">
+                  Daging sapi ala Meksiko yang enak dan mudah...Baca
+                  Selengkapnya
+                </p>
+                <p class="estimated-time">
+                  <i class="ri-time-line"></i> Persiapan: 15 menit
+                </p>
+              </div>
+              <div class="product-img">
+                <a href="#add-product" data-bs-toggle="offcanvas">
+                  <img
+                    class="img-fluid img"
+                    src="../assets/images/product/rp1.png"
+                    alt="rp1"
+                  />
+                </a>
+                <div class="add-btn">
+                  <a class="btn btn-outline add-to-cart-btn"
+                    ><i class="ri-add-line"></i> TAMBAH</a
+                  >
+                </div>
+                <div class="plus-minus" style="display: none">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="1" min="1" max="10" />
+                  <i class="ri-add-line add"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Product 2 -->
+            <div
+              class="product-box2 mt-4"
+              data-id="2"
+              data-name="Tacos"
+              data-price="75000"
+              data-img="../assets/images/product/rp2.png"
+              data-type="nonveg"
+              data-category="nonveg"
+            >
+              <div class="product-content">
+                <img
+                  class="img"
+                  src="../assets/images/svg/nonveg.svg"
+                  alt="non-veg"
+                />
+                <h5 class="product-name">Tacos</h5>
+                <div class="d-flex align-items-center gap-1">
+                  <ul class="rating-stars">
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                  </ul>
+                  <h5 class="dark-text">1k+ Rating</h5>
+                </div>
+                <div class="product-price">
+                  <h6 class="fw-semibold">Rp75.000</h6>
+                </div>
+                <p class="mb-0 mt-2 pt-2">
+                  Tacos ala Meksiko yang lezat dan mudah...Baca Selengkapnya
+                </p>
+                <p class="estimated-time">
+                  <i class="ri-time-line"></i> Persiapan: 10 menit
+                </p>
+              </div>
+              <div class="product-img">
+                <a href="#product-popup" data-bs-toggle="offcanvas">
+                  <img
+                    class="img-fluid img"
+                    src="../assets/images/product/rp2.png"
+                    alt="rp1"
+                  />
+                </a>
+                <div class="add-btn">
+                  <a class="btn btn-outline add-to-cart-btn"
+                    ><i class="ri-add-line"></i> TAMBAH</a
+                  >
+                </div>
+                <div class="plus-minus" style="display: none">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="1" min="1" max="10" />
+                  <i class="ri-add-line add"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Product 3 -->
+            <div
+              class="product-box2 mt-4"
+              data-id="3"
+              data-name="Chicken Burrito Bowl"
+              data-price="90000"
+              data-img="../assets/images/product/rp3.png"
+              data-type="nonveg"
+              data-category="bestseller,nonveg,iftar"
+            >
+              <span class="product-badge bestseller-badge">Terlaris</span>
+              <span class="iftar-badge">Menu Berbuka</span>
+              <div class="product-content">
+                <img
+                  class="img"
+                  src="../assets/images/svg/nonveg.svg"
+                  alt="non-veg"
+                />
+                <h5 class="product-name">Chicken Burrito Bowl</h5>
+                <div class="d-flex align-items-center gap-1">
+                  <ul class="rating-stars">
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                  </ul>
+                  <h5 class="dark-text">1k+ Rating</h5>
+                </div>
+                <div class="product-price">
+                  <h6 class="fw-semibold">Rp90.000</h6>
+                </div>
+                <p class="mb-0 mt-2 pt-2">
+                  Bowl burrito ayam ala Meksiko yang enak...Baca Selengkapnya
+                </p>
+                <p class="estimated-time">
+                  <i class="ri-time-line"></i> Persiapan: 12 menit
+                </p>
+              </div>
+              <div class="product-img">
+                <a href="#product-popup" data-bs-toggle="offcanvas">
+                  <img
+                    class="img-fluid img"
+                    src="../assets/images/product/rp3.png"
+                    alt="rp1"
+                  />
+                </a>
+                <div class="add-btn">
+                  <a class="btn btn-outline add-to-cart-btn"
+                    ><i class="ri-add-line"></i> TAMBAH</a
+                  >
+                </div>
+                <div class="plus-minus" style="display: none">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="1" min="1" max="10" />
+                  <i class="ri-add-line add"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Product 4 -->
+            <div
+              class="product-box2 mt-4"
+              data-id="4"
+              data-name="Vegetable Salad"
+              data-price="65000"
+              data-img="../assets/images/product/rp4.png"
+              data-type="veg"
+              data-category="veg,breakfast,iftar"
+            >
+              <span class="iftar-badge">Menu Berbuka</span>
+              <div class="product-content">
+                <img
+                  class="img"
+                  src="../assets/images/icons/veg.svg"
+                  alt="veg"
+                />
+                <h5 class="product-name">Vegetable Salad</h5>
+                <div class="d-flex align-items-center gap-1">
+                  <ul class="rating-stars">
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                  </ul>
+                  <h5 class="dark-text">800+ Rating</h5>
+                </div>
+                <div class="product-price">
+                  <h6 class="fw-semibold">Rp65.000</h6>
+                </div>
+                <p class="mb-0 mt-2 pt-2">
+                  Salad sayuran segar dengan saus special...Baca Selengkapnya
+                </p>
+                <p class="estimated-time">
+                  <i class="ri-time-line"></i> Persiapan: 8 menit
+                </p>
+              </div>
+              <div class="product-img">
+                <a href="#product-popup" data-bs-toggle="offcanvas">
+                  <img
+                    class="img-fluid img"
+                    src="../assets/images/product/rp4.png"
+                    alt="rp4"
+                  />
+                </a>
+                <div class="add-btn">
+                  <a class="btn btn-outline add-to-cart-btn"
+                    ><i class="ri-add-line"></i> TAMBAH</a
+                  >
+                </div>
+                <div class="plus-minus" style="display: none">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="1" min="1" max="10" />
+                  <i class="ri-add-line add"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Product 5 -->
+            <div
+              class="product-box2 mt-4"
+              data-id="5"
+              data-name="Caramel Frappuccino"
+              data-price="45000"
+              data-img="../assets/images/product/rp1.png"
+              data-type="veg"
+              data-category="bestseller,veg,coffee"
+            >
+              <span class="product-badge bestseller-badge">Terlaris</span>
+              <div class="product-content">
+                <img
+                  class="img"
+                  src="../assets/images/icons/veg.svg"
+                  alt="veg"
+                />
+                <h5 class="product-name">Caramel Frappuccino</h5>
+                <div class="d-flex align-items-center gap-1">
+                  <ul class="rating-stars">
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                  </ul>
+                  <h5 class="dark-text">1.5k+ Rating</h5>
+                </div>
+                <div class="product-price">
+                  <h6 class="fw-semibold">Rp45.000</h6>
+                </div>
+                <p class="mb-0 mt-2 pt-2">
+                  Frappuccino dengan saus karamel dan whipped cream...Baca
+                  Selengkapnya
+                </p>
+                <p class="estimated-time">
+                  <i class="ri-time-line"></i> Persiapan: 5 menit
+                </p>
+              </div>
+              <div class="product-img">
+                <a href="#product-popup" data-bs-toggle="offcanvas">
+                  <img
+                    class="img-fluid img"
+                    src="../assets/images/product/rp1.png"
+                    alt="Coffee"
+                  />
+                </a>
+                <div class="add-btn">
+                  <a class="btn btn-outline add-to-cart-btn"
+                    ><i class="ri-add-line"></i> TAMBAH</a
+                  >
+                </div>
+                <div class="plus-minus" style="display: none">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="1" min="1" max="10" />
+                  <i class="ri-add-line add"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Product 6 -->
+            <div
+              class="product-box2 mt-4"
+              data-id="6"
+              data-name="Chocolate Cake"
+              data-price="55000"
+              data-img="../assets/images/product/rp2.png"
+              data-type="veg"
+              data-category="veg,dessert,iftar"
+            >
+              <span class="product-badge new-badge">Baru</span>
+              <span class="iftar-badge">Menu Berbuka</span>
+              <div class="product-content">
+                <img
+                  class="img"
+                  src="../assets/images/icons/veg.svg"
+                  alt="veg"
+                />
+                <h5 class="product-name">Chocolate Cake</h5>
+                <div class="d-flex align-items-center gap-1">
+                  <ul class="rating-stars">
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                  </ul>
+                  <h5 class="dark-text">500+ Rating</h5>
+                </div>
+                <div class="product-price">
+                  <h6 class="fw-semibold">Rp55.000</h6>
+                </div>
+                <p class="mb-0 mt-2 pt-2">
+                  Kue coklat lembut dengan lapisan ganache...Baca Selengkapnya
+                </p>
+                <p class="estimated-time">
+                  <i class="ri-time-line"></i> Persiapan: 0 menit (Siap Saji)
+                </p>
+              </div>
+              <div class="product-img">
+                <a href="#product-popup" data-bs-toggle="offcanvas">
+                  <img
+                    class="img-fluid img"
+                    src="../assets/images/product/rp2.png"
+                    alt="Cake"
+                  />
+                </a>
+                <div class="add-btn">
+                  <a class="btn btn-outline add-to-cart-btn"
+                    ><i class="ri-add-line"></i> TAMBAH</a
+                  >
+                </div>
+                <div class="plus-minus" style="display: none">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="1" min="1" max="10" />
+                  <i class="ri-add-line add"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" style="display: none" id="no-results">
+              <i class="ri-search-line"></i>
+              <h4>Menu tidak ditemukan</h4>
+              <p>Maaf, kami tidak dapat menemukan menu yang Anda cari.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- food section end -->
+
+    <!-- panel-space start -->
+    <section class="panel-space"></section>
+    <!-- panel-space end -->
+
+    <!-- cart popup start -->
+    <div class="cart-popup" id="cart-popup" style="display: none">
+      <div class="price-items">
+        <h3 id="cart-total">Rp0</h3>
+        <h6 id="cart-count">0 item ditambahkan</h6>
+      </div>
+      <a href="cart.html" class="btn theme-btn cart-btn mt-0"
+        >Lihat Keranjang</a
+      >
+    </div>
+    <!-- cart popup end -->
+
+    <!-- swiper js -->
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/custom-swiper.js"></script>
+
+    <!-- bootstrap js -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- script js -->
+    <script src="../assets/js/script.js"></script>
+
+    <!-- Additional Ramadhan JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add Iftar category filter functionality
+        const categoryTabs = document.querySelectorAll(".category-tab");
+        const foodItems = document.querySelectorAll(
+          "#food-items-container .product-box2"
+        );
+
+        categoryTabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            const category = this.getAttribute("data-category");
+
+            // Remove active class from all tabs
+            categoryTabs.forEach((tab) => tab.classList.remove("active"));
+
+            // Add active class to clicked tab
+            this.classList.add("active");
+
+            // Filter food items
+            let itemsFound = false;
+
+            foodItems.forEach((item) => {
+              const itemCategories = item
+                .getAttribute("data-category")
+                .split(",");
+
+              if (category === "all" || itemCategories.includes(category)) {
+                item.style.display = "flex";
+                itemsFound = true;
+              } else {
+                item.style.display = "none";
+              }
+            });
+
+            // Show or hide no results message
+            document.getElementById("no-results").style.display = itemsFound
+              ? "none"
+              : "block";
+          });
+        });
+
+        // Handle search functionality
+        const searchToggle = document.getElementById("toggle-search");
+        const searchContainer = document.getElementById("search-container");
+        const searchInput = document.getElementById("search-input");
+
+        searchToggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          searchContainer.style.display =
+            searchContainer.style.display === "none" ? "block" : "none";
+          if (searchContainer.style.display === "block") {
+            searchInput.focus();
+          }
+        });
+
+        searchInput.addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase();
+          let itemsFound = false;
+
+          foodItems.forEach((item) => {
+            const itemName = item.getAttribute("data-name").toLowerCase();
+
+            if (itemName.includes(searchTerm)) {
+              item.style.display = "flex";
+              itemsFound = true;
+            } else {
+              item.style.display = "none";
+            }
+          });
+
+          document.getElementById("no-results").style.display = itemsFound
+            ? "none"
+            : "block";
+        });
+
+        // Cart functionality
+        const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+        let cartTotal = 0;
+        let cartCount = 0;
+        const cartPopup = document.getElementById("cart-popup");
+
+        addToCartButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const product = this.closest(".product-box2");
+            const price = parseInt(product.getAttribute("data-price"));
+
+            cartTotal += price;
+            cartCount++;
+
+            document.getElementById(
+              "cart-total"
+            ).textContent = `Rp${cartTotal.toLocaleString("id-ID")}`;
+            document.getElementById(
+              "cart-count"
+            ).textContent = `${cartCount} item ditambahkan`;
+
+            // Show quantity controls instead of add button
+            this.parentElement.style.display = "none";
+            product.querySelector(".plus-minus").style.display = "flex";
+
+            // Show cart popup
+            cartPopup.style.display = "flex";
+          });
+        });
+
+        // Quantity controls
+        const plusButtons = document.querySelectorAll(".add");
+        const minusButtons = document.querySelectorAll(".sub");
+
+        plusButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const product = this.closest(".product-box2");
+            const price = parseInt(product.getAttribute("data-price"));
+            const input = this.previousElementSibling;
+            const currentValue = parseInt(input.value);
+
+            if (currentValue < parseInt(input.getAttribute("max"))) {
+              input.value = currentValue + 1;
+              cartTotal += price;
+              cartCount++;
+
+              document.getElementById(
+                "cart-total"
+              ).textContent = `Rp${cartTotal.toLocaleString("id-ID")}`;
+              document.getElementById(
+                "cart-count"
+              ).textContent = `${cartCount} item ditambahkan`;
+            }
+          });
+        });
+
+        minusButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const product = this.closest(".product-box2");
+            const price = parseInt(product.getAttribute("data-price"));
+            const input = this.nextElementSibling;
+            const currentValue = parseInt(input.value);
+
+            if (currentValue > 1) {
+              input.value = currentValue - 1;
+              cartTotal -= price;
+              cartCount--;
+
+              document.getElementById(
+                "cart-total"
+              ).textContent = `Rp${cartTotal.toLocaleString("id-ID")}`;
+              document.getElementById(
+                "cart-count"
+              ).textContent = `${cartCount} item ditambahkan`;
+            } else {
+              input.value = 0;
+              this.closest(".plus-minus").style.display = "none";
+              product.querySelector(".add-btn").style.display = "block";
+
+              cartTotal -= price;
+              cartCount--;
+
+              document.getElementById(
+                "cart-total"
+              ).textContent = `Rp${cartTotal.toLocaleString("id-ID")}`;
+              document.getElementById(
+                "cart-count"
+              ).textContent = `${cartCount} item ditambahkan`;
+
+              if (cartCount === 0) {
+                cartPopup.style.display = "none";
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="zomo" />
+    <meta name="keywords" content="zomo" />
+    <meta name="author" content="zomo" />
+    <link rel="manifest" href="../manifest.json" />
+
+    <link
+      rel="icon"
+      href="../assets/images/logo/favicon.png"
+      type="image/x-icon"
+    />
+    <title>MB Juice</title>
+    <link rel="apple-touch-icon" href="../assets/images/logo/favicon.png" />
+    <meta name="theme-color" content="#ff8d2f" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="zomo" />
+    <meta
+      name="msapplication-TileImage"
+      content="../assets/images/logo/favicon.png"
+    />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- font link -->
+    <link rel="stylesheet" href="../assets/css/vendors/metropolis.min.css" />
+
+    <!-- remixicon css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- swiper css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/css/vendors/swiper-bundle.min.css"
+    />
+
+    <!-- bootstrap css -->
+    <link
+      rel="stylesheet"
+      id="rtl-link"
+      type="text/css"
+      href="../assets/css/vendors/bootstrap.min.css"
+    />
+
+    <!-- Theme css -->
+    <link
+      rel="stylesheet"
+      id="change-link"
+      type="text/css"
+      href="../assets/css/style.css"
+    />
+  </head>
+
+  <body>
+    <!-- header start -->
+    <header>
+      <div class="header-panel-lg">
+        <div class="custom-container">
+          <div class="panel">
+            <a href="food-home.html"><i class="ri-arrow-left-s-line"></i></a>
+            <a href="#" id="toggle-search"><i class="ri-search-2-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- header end -->
+
+    <!-- Lantern decorations -->
+    <div class="lantern-decoration lantern-left"></div>
+    <div class="lantern-decoration lantern-right"></div>
+
+    <!-- Ramadhan Banner -->
+    <section class="mt-2" style="margin-bottom: 5em">
+      <div class="custom-container">
+        <div class="ramadhan-banner">
+          <i class="ri-moon-fill moon-icon"></i>
+          <h4>Selamat Menunaikan Ibadah Puasa</h4>
+          <p>Nikmati menu spesial berbuka puasa kami</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restaurant details section start -->
+    <section>
+      <div class="custom-container">
+        <div class="restaurant-details-box">
+          <div class="restaurant-head">
+            <div class="name">
+              <img
+                class="img-fluid restaurant-logo"
+                src="../assets/images/icons/logo.jpg"
+                alt="starbucks-logo"
+              />
+              <div class="d-block ms-2">
+                <h3>MB Juice</h3>
+                <h6>Minuman & Makanan Ringan</h6>
+              </div>
+            </div>
+            <div class="option">
+              <a href="#">
+                <i class="ri-share-line share"></i>
+              </a>
+
+              <a href="#">
+                <i class="toggle-heart ri-heart-3-fill heart"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="restaurant-details">
+            <div class="location">
+              <h6 class="rating-star">
+                <span class="star"><i class="ri-star-s-fill"></i></span> 4.8
+                (500+ Ulasan)
+              </h6>
+              <h6 class="pt-2 light-text">
+                <span class="dark-text">5-10</span> menit persiapan
+              </h6>
+            </div>
+            <ul class="distance">
+              <li><i class="ri-map-pin-fill theme-color"></i> 10:00 | Buka</li>
+              <li><i class="ri-time-fill theme-color"></i> 20:30 | Tutup</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Restaurant details section end -->
+
+    <!-- Search Box -->
+    <div class="custom-container" id="search-container" style="display: none">
+      <div class="search-box">
+        <i class="ri-search-line search-icon"></i>
+        <input
+          type="text"
+          class="search-input"
+          id="search-input"
+          placeholder="Cari menu favorit Anda..."
+        />
+      </div>
+    </div>
+
+    <!-- Pickup Info section start -->
+    <section>
+      <div class="custom-container">
+        <div
+          class="alert alert-info d-flex align-items-center"
+          role="alert"
+          style="
+            background-color: var(--theme-color-light);
+            color: var(--theme-color-dark);
+            border-color: var(--theme-color-main);
+          "
+        >
+          <i class="ri-information-line me-2"></i>
+          <div>
+            Pesanan Anda akan dipersiapkan untuk diambil di outlet MB Juice
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pickup Info section end -->
+
+    <!-- Category Tabs section start -->
+    <section class="sticky-categories">
+      <div class="custom-container">
+        <div class="food-category-tabs" id="category-tabs">
+          <div class="category-tab active" data-category="all">Semua Menu</div>
+          <div class="category-tab" data-category="bestseller">Terlaris</div>
+          <div class="category-tab" data-category="iftar">Menu Berbuka</div>
+          <div class="category-tab" data-category="beverage">Minuman</div>
+          <div class="category-tab" data-category="veg">Makanan</div>
+        </div>
+      </div>
+    </section>
+    <!-- Category Tabs section end -->
+
+    <!-- food section start -->
+    <section class="food-list-section section-b-space">
+      <div class="custom-container">
+        <div class="list-box">
+          <div id="food-items-container">
+            <!-- Food items will be populated here based on category selection -->
+            <!-- Example Product 1 -->
+            <div
+              class="product-box2 mt-4"
+              data-id="1"
+              data-name="Jus Alpukat"
+              data-price="7000"
+              data-img="../assets/images/product/1.png"
+              data-type="beverage"
+              data-category="bestseller,beverage"
+            >
+              <span class="product-badge bestseller-badge">Terlaris</span>
+              <div class="product-content">
+                <h5 class="product-name">Jus Alpukat</h5>
+                <div class="d-flex align-items-center gap-1">
+                  <ul class="rating-stars">
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                  </ul>
+                  <h5 class="dark-text">200+ Rating</h5>
+                </div>
+                <div class="product-price">
+                  <h6 class="fw-semibold">Rp7.000</h6>
+                </div>
+                <p class="mb-0 mt-2 pt-2">
+                  Klasik dan creamy, jus alpukat segar yang kaya akan nutrisi
+                  dan cita rasa alami.
+                </p>
+                <p class="estimated-time">
+                  <i class="ri-time-line"></i> Persiapan: 3 menit
+                </p>
+              </div>
+              <div class="product-img">
+                <a href="#add-product" data-bs-toggle="offcanvas">
+                  <img
+                    class="img-fluid img"
+                    src="../assets/images/product/1.png"
+                    alt="rp1"
+                  />
+                </a>
+                <div class="add-btn">
+                  <a class="btn btn-outline add-to-cart-btn"
+                    ><i class="ri-add-line"></i> TAMBAH</a
+                  >
+                </div>
+                <div class="plus-minus" style="display: none">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="1" min="1" max="10" />
+                  <i class="ri-add-line add"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Product 2 -->
+            <div
+              class="product-box2 mt-4"
+              data-id="2"
+              data-name="Es Coklat"
+              data-price="5000"
+              data-img="../assets/images/product/2.png"
+              data-type="beverage"
+              data-category="beverage"
+            >
+              <div class="product-content">
+                <h5 class="product-name">Es Coklat</h5>
+                <div class="d-flex align-items-center gap-1">
+                  <ul class="rating-stars">
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                    <li><i class="ri-star-fill stars"></i></li>
+                  </ul>
+                  <h5 class="dark-text">1k+ Rating</h5>
+                </div>
+                <div class="product-price">
+                  <h6 class="fw-semibold">Rp5.000</h6>
+                </div>
+                <p class="mb-0 mt-2 pt-2">
+                  Dingin dan manis, es coklat lezat yang sempurna untuk
+                  menyegarkan hari Anda.
+                </p>
+                <p class="estimated-time">
+                  <i class="ri-time-line"></i> Persiapan: 3 menit
+                </p>
+              </div>
+              <div class="product-img">
+                  <img
+                    class="img-fluid img"
+                    src="../assets/images/product/2.png"
+                    alt="rp1"
+                  />
+                </a>
+                <div class="add-btn">
+                  <a class="btn btn-outline add-to-cart-btn"
+                    ><i class="ri-add-line"></i> TAMBAH</a
+                  >
+                </div>
+                <div class="plus-minus" style="display: none">
+                  <i class="ri-subtract-line sub"></i>
+                  <input type="number" value="1" min="1" max="10" />
+                  <i class="ri-add-line add"></i>
+                </div>
+              </div>
+            </div>
+            
+            <!-- No Results Message -->
+            <div class="no-results" style="display: none" id="no-results">
+              <i class="ri-search-line"></i>
+              <h4>Menu tidak ditemukan</h4>
+              <p>Maaf, kami tidak dapat menemukan menu yang Anda cari.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- food section end -->
+
+    <!-- panel-space start -->
+    <section class="panel-space"></section>
+    <!-- panel-space end -->
+
+    <!-- cart popup start -->
+    <div class="cart-popup" id="cart-popup" style="display: none">
+      <div class="price-items">
+        <h3 id="cart-total">Rp0</h3>
+        <h6 id="cart-count">0 item ditambahkan</h6>
+      </div>
+      <a href="cart.html" class="btn theme-btn cart-btn mt-0"
+        >Lihat Keranjang</a
+      >
+    </div>
+    <!-- cart popup end -->
+
+    <!-- swiper js -->
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/custom-swiper.js"></script>
+
+    <!-- bootstrap js -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <!-- script js -->
+    <script src="../assets/js/script.js"></script>
+
+    <!-- Custom Cart JS -->
+    <script>
+      // Inisialisasi keranjang
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Update tampilan keranjang
+      function updateCartUI() {
+        const cartPopup = document.getElementById("cart-popup");
+        const cartTotal = document.getElementById("cart-total");
+        const cartCount = document.getElementById("cart-count");
+
+        if (cart.length > 0) {
+          // Hitung total harga
+          const total = cart.reduce(
+            (sum, item) => sum + item.price * item.quantity,
+            0
+          );
+
+          // Update tampilan
+          cartTotal.textContent = `Rp${numberWithCommas(total)}`;
+
+          // Update jumlah item
+          const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+          cartCount.textContent = `${totalItems} item ditambahkan`;
+
+          // Tampilkan popup keranjang
+          cartPopup.style.display = "flex";
+        } else {
+          // Sembunyikan popup jika keranjang kosong
+          cartPopup.style.display = "none";
+        }
+
+        // Simpan keranjang ke localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      // Format angka dengan titik sebagai pemisah ribuan
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      }
+
+      // Fungsi menambahkan produk ke keranjang
+      function addToCart(
+        productId,
+        productName,
+        productPrice,
+        productImg,
+        productType,
+        quantity = 1
+      ) {
+        // Cek apakah produk sudah ada di keranjang
+        const existingProductIndex = cart.findIndex(
+          (item) => item.id === productId
+        );
+
+        if (existingProductIndex !== -1) {
+          // Jika sudah ada, update jumlahnya
+          cart[existingProductIndex].quantity += quantity;
+        } else {
+          // Jika belum ada, tambahkan produk baru
+          cart.push({
+            id: productId,
+            name: productName,
+            price: Number(productPrice),
+            img: productImg,
+            type: productType,
+            quantity: quantity,
+          });
+        }
+
+        // Update tampilan keranjang
+        updateCartUI();
+      }
+
+      // Fungsi untuk filter produk berdasarkan kategori
+      function filterProducts(category) {
+        const products = document.querySelectorAll(".product-box2");
+        const noResults = document.getElementById("no-results");
+        let visibleCount = 0;
+
+        products.forEach((product) => {
+          if (category === "all") {
+            product.style.display = "flex";
+            visibleCount++;
+          } else {
+            const categories = product.dataset.category.split(",");
+            if (categories.includes(category)) {
+              product.style.display = "flex";
+              visibleCount++;
+            } else {
+              product.style.display = "none";
+            }
+          }
+        });
+
+        // Tampilkan pesan "tidak ditemukan" jika tidak ada produk yang sesuai
+        if (visibleCount === 0) {
+          noResults.style.display = "block";
+        } else {
+          noResults.style.display = "none";
+        }
+      }
+
+      // Fungsi untuk pencarian produk
+      function searchProducts(query) {
+        const products = document.querySelectorAll(".product-box2");
+        const noResults = document.getElementById("no-results");
+        let visibleCount = 0;
+
+        query = query.toLowerCase().trim();
+
+        if (!query) {
+          // Jika query kosong, tampilkan semua produk
+          products.forEach((product) => {
+            product.style.display = "flex";
+            visibleCount++;
+          });
+        } else {
+          products.forEach((product) => {
+            const productName = product.dataset.name.toLowerCase();
+            if (productName.includes(query)) {
+              product.style.display = "flex";
+              visibleCount++;
+            } else {
+              product.style.display = "none";
+            }
+          });
+        }
+
+        // Tampilkan pesan "tidak ditemukan" jika tidak ada produk yang sesuai
+        if (visibleCount === 0) {
+          noResults.style.display = "block";
+        } else {
+          noResults.style.display = "none";
+        }
+      }
+
+      // Event listener untuk tombol tambah ke keranjang
+      document.addEventListener("DOMContentLoaded", function () {
+        // Update tampilan keranjang saat halaman dimuat
+        updateCartUI();
+
+        // Toggle search box
+        const toggleSearchBtn = document.getElementById("toggle-search");
+        const searchContainer = document.getElementById("search-container");
+
+        toggleSearchBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (searchContainer.style.display === "none") {
+            searchContainer.style.display = "block";
+            document.getElementById("search-input").focus();
+          } else {
+            searchContainer.style.display = "none";
+          }
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById("search-input");
+
+        searchInput.addEventListener("input", function () {
+          searchProducts(this.value);
+        });
+
+        // Category tabs
+        const categoryTabs = document.querySelectorAll(".category-tab");
+
+        categoryTabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            // Remove active class from all tabs
+            categoryTabs.forEach((t) => t.classList.remove("active"));
+
+            // Add active class to clicked tab
+            this.classList.add("active");
+
+            // Filter products
+            filterProducts(this.dataset.category);
+          });
+        });
+
+        // Tambahkan event listener ke semua tombol "TAMBAH"
+        const addButtons = document.querySelectorAll(".add-to-cart-btn");
+
+        addButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const productBox = this.closest(".product-box2");
+            const productId = productBox.dataset.id;
+            const productName = productBox.dataset.name;
+            const productPrice = productBox.dataset.price;
+            const productImg = productBox.dataset.img;
+            const productType = productBox.dataset.type;
+
+            // Sembunyikan tombol tambah dan tampilkan plus-minus
+            this.parentElement.style.display = "none";
+            const plusMinus = this.parentElement.nextElementSibling;
+            plusMinus.style.display = "flex";
+
+            // Tambahkan produk ke keranjang
+            addToCart(
+              productId,
+              productName,
+              productPrice,
+              productImg,
+              productType
+            );
+          });
+        });
+
+        // Event listener untuk tombol tambah/kurang quantity
+        const productContainers = document.querySelectorAll(".product-box2");
+
+        productContainers.forEach((container) => {
+          const plusButton = container.querySelector(".ri-add-line.add");
+          const minusButton = container.querySelector(".ri-subtract-line.sub");
+          const quantityInput = container.querySelector('input[type="number"]');
+
+          if (plusButton && minusButton && quantityInput) {
+            // Tombol tambah
+            plusButton.addEventListener("click", function () {
+              const productId = container.dataset.id;
+              const productName = container.dataset.name;
+              const productPrice = container.dataset.price;
+              const productImg = container.dataset.img;
+              const productType = container.dataset.type;
+
+              // Tambahkan produk ke keranjang
+              addToCart(
+                productId,
+                productName,
+                productPrice,
+                productImg,
+                productType,
+                1
+              );
+
+              // Update nilai input
+              const existingProduct = cart.find(
+                (item) => item.id === productId
+              );
+              if (existingProduct) {
+                quantityInput.value = existingProduct.quantity;
+              }
+            });
+
+            // Tombol kurang
+            minusButton.addEventListener("click", function () {
+              const productId = container.dataset.id;
+              const existingProductIndex = cart.findIndex(
+                (item) => item.id === productId
+              );
+
+              if (existingProductIndex !== -1) {
+                // Kurangi quantity
+                cart[existingProductIndex].quantity--;
+
+                // Jika quantity menjadi 0, hapus dari keranjang
+                if (cart[existingProductIndex].quantity <= 0) {
+                  cart.splice(existingProductIndex, 1);
+
+                  // Tampilkan kembali tombol tambah
+                  const addBtn = container.querySelector(".add-btn");
+                  const plusMinus = container.querySelector(".plus-minus");
+
+                  if (addBtn && plusMinus) {
+                    addBtn.style.display = "block";
+                    plusMinus.style.display = "none";
+                  }
+                }
+
+                // Update nilai input
+                const existingProduct = cart.find(
+                  (item) => item.id === productId
+                );
+                if (existingProduct) {
+                  quantityInput.value = existingProduct.quantity;
+                } else {
+                  quantityInput.value = 1;
+                }
+
+                // Update tampilan keranjang
+                updateCartUI();
+              }
+            });
+
+            // Update input nilai
+            quantityInput.addEventListener("change", function () {
+              const productId = container.dataset.id;
+              const existingProductIndex = cart.findIndex(
+                (item) => item.id === productId
+              );
+
+              if (existingProductIndex !== -1) {
+                const newQuantity = parseInt(this.value);
+
+                if (newQuantity <= 0) {
+                  // Hapus dari keranjang jika quantity 0
+                  cart.splice(existingProductIndex, 1);
+
+                  // Tampilkan kembali tombol tambah
+                  const addBtn = container.querySelector(".add-btn");
+                  const plusMinus = container.querySelector(".plus-minus");
+
+                  if (addBtn && plusMinus) {
+                    addBtn.style.display = "block";
+                    plusMinus.style.display = "none";
+                  }
+
+                  this.value = 1;
+                } else {
+                  // Update quantity
+                  cart[existingProductIndex].quantity = newQuantity;
+                }
+
+                // Update tampilan keranjang
+                updateCartUI();
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
